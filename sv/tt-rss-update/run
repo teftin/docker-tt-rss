@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /opt/Tiny-Tiny-RSS-1.12
+exec setuidgid www-data /opt/Tiny-Tiny-RSS-1.12/update_daemon2.php
