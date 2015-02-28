@@ -1,3 +1,3 @@
 #!/bin/sh
-cd /opt/Tiny-Tiny-RSS-1.15.3
-exec chpst -u www-data /opt/Tiny-Tiny-RSS-1.15.3/update_daemon2.php
+cd /opt/Tiny-Tiny-RSS-master
+exec chpst -u www-data /opt/Tiny-Tiny-RSS-master/update_daemon2.php
