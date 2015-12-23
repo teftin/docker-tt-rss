@@ -5,12 +5,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install -y php5 php5-cli php5-curl php5-gd php5-mysqlnd php5-xcache php5-fpm nginx runit
 
-ADD https://github.com/gothfox/Tiny-Tiny-RSS/archive/master.tar.gz /opt/
-RUN cd /opt && tar xzf master.tar.gz
-ADD config.php /opt/Tiny-Tiny-RSS-master/
-RUN chown -R www-data:www-data /opt/Tiny-Tiny-RSS-master/lock
-RUN chown -R www-data:www-data /opt/Tiny-Tiny-RSS-master/cache
-RUN chown -R www-data:www-data /opt/Tiny-Tiny-RSS-master/feed-icons
+ADD https://tt-rss.org/gitlab/fox/tt-rss/repository/archive.tar.gz?ref=master /opt/
+RUN cd /opt && tar xzf archive.tar.gz
+ADD config.php /opt/tt-rss.git/
+RUN chown -R www-data:www-data /opt/tt-rss.git/lock
+RUN chown -R www-data:www-data /opt/tt-rss.git/cache
+RUN chown -R www-data:www-data /opt/tt-rss.git/feed-icons
 
 RUN sed -i.bak -e '/daemonize/c\daemonize = no' /etc/php5/fpm/php-fpm.conf
 
